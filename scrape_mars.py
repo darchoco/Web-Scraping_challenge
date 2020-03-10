@@ -83,6 +83,7 @@ def scrape_info():
     df.set_index("Mars - Earth Comparison",inplace=True)
     #convert to html table
     table = df.to_html(header = 'true')
+    table = table.replace("\n","")
 
     mars_data = {
         'article_title':article_title,

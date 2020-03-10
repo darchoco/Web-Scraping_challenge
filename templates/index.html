@@ -35,10 +35,12 @@
   </div>
   <div class="container-fluid">
     <h1>Mars Hemispheres</h1>
-    <img src="{{mars.hemisphere_image_urls[0].img_link}}" alt="hemi1"> 
-    <img src="{{mars.hemisphere_image_urls[1].img_link}}" alt="hemi2"> 
-    <img src="{{mars.hemisphere_image_urls[2].img_link}}" alt="hemi3"> 
-    <img src="{{mars.hemisphere_image_urls[3].img_link}}" alt="hemi4"> 
+    {%for pic in mars.hemisphere_image_urls %}}
+    <div class ="col-md-6">
+    <img src="{{pic['img_url']}}" style = "width:50%;"> 
+    {{pic['title']}}
+    </div>
+    {% endfor %}
   </div>
 </body>
 
